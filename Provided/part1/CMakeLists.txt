@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_VERBOSE_MAKEFILE on)
 
 # choose compiler - should be the same as the one on csl2
-SET(CMAKE_CXX_COMPILER gcc)
+SET(CMAKE_CXX_COMPILER g++)
 
 # must be ONLY MatrixOperations.h
 set(INCLUDE_FILES
