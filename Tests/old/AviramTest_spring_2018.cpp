@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "Utilities.h"
-#include "MatrixOperations.h"
+#include "../../SourceFiles/part1/Utilities.h"
+#include "../../SourceFiles/part1/MatrixOperations.h"
 
 using namespace std;
 

@@ -1,7 +1,6 @@
 #include <iostream>
 
-#include "Observer.h"
-#include "Subject.h"
+#include "../../SourceFiles/part2/Subject.h"
 
 class TemperatureSensor : public Subject<int> {};
 

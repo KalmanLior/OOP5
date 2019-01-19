@@ -13,7 +13,7 @@ private:
     list<Observer<T>*>* observers;
 public:
     Subject<T>(){
-        observers = new list<Observer<T>*>;
+        observers =  new list<Observer<T>*>();
     }
     ~Subject(){
         delete(observers);
@@ -29,7 +29,7 @@ public:
         for(auto o = observers->begin(); \
             o != observers->end();       \
             o++){
-            if(&(**o) == &observer) //TODO: comparing by addresses.. is that ok?
+            if((*o) == &observer) //TODO: comparing by addresses.. is that ok?
                 throw ObserverAlreadyKnownToSubject();
         }
         observers->push_back(&observer);
@@ -38,7 +38,7 @@ public:
         for(auto o = observers->begin(); \
             o != observers->end();       \
             o++){
-            if(&(**o) == &observer) {//TODO: comparing by addresses.. is that ok?
+            if((*o) == &observer) {//TODO: comparing by addresses.. is that ok?
                 observers->erase(o);
                 return;
             }

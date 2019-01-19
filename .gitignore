@@ -33,5 +33,4 @@
 
 # project stuff
 .idea/*
-Provided/part1/cmake-build-debug/*
-Provided/part2/cmake-build-debug/*
+Tests/cmake-build-debug/*
