@@ -21,36 +21,36 @@ int main() {
                 List< Int<0>, Int<1>, Int<0> >,
                 List< Int<0>, Int<0>, Int<5> >
             > matrix11;
-            
+
 	typedef List<
 					List< Int<7>, Int<6>, Int<0> >,
 					List< Int<0>, Int<7>, Int<0> >,
 					List< Int<8>, Int<0>, Int<3> >
 				> matrix21;
-				
+
 	typedef typename Add<matrix11, matrix21>::result matrix31; // = List<
 															   //			List< Int<8>, Int<8>, Int<0> >,
 															   //			List< Int<0>, Int<8>, Int<0> >,
 															   //			List< Int<8>, Int<0>, Int<8> >
 															   //		 >
 	static_assert(matrix31::head::head::value == 8, "Failed");
-	
+
 	typedef List<
                 List< Int<1>, Int<2> >,
                 List< Int<0>, Int<1> >
             > matrix12;
-            
+
 	typedef List<
 					List< Int<0>, Int<7> >,
 					List< Int<8>, Int<0> >
 				> matrix22;
-				
+
 	typedef typename Multiply<matrix12, matrix22>::result matrix32; // = List<
 																    //			List< Int<16>, Int<7> >,
 																    //			List< Int<8>, Int<0> >
 																    //		  >
-																 
-	static_assert(matrix32::head::head::value == 16, "Failed");														 
+
+	static_assert(matrix32::head::head::value == 16, "Failed");
 
 	std::cout << "Passed" << std::endl;
 }

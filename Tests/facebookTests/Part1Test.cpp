@@ -85,13 +85,13 @@ int main() {
             List<Int<1>, Int<2>, Int<3> >,
             List<Int<4>, Int<5>, Int<6> >,
             List<Int<7>, Int<8>, Int<9> >
-    > matrix11;
+                                 > matrix11;
 
     typedef List<
             List<Int<9>, Int<8>, Int<7> >,
             List<Int<6>, Int<5>, Int<4> >,
             List<Int<3>, Int<2>, Int<1> >
-    > matrix21;
+                                 > matrix21;
 
     // = List<
     //			List< Int<10>, Int<10>, Int<10> >,
@@ -117,13 +117,13 @@ int main() {
             List<Int<410>, Int<40>, Int<38> >,
             List<Int<37>, Int<0>, Int<10> >,
             List<Int<41>, Int<32>, Int<300> >
-    > matrix42;
+                                   > matrix42;
 
     typedef List<
             List<Int<10>, Int<2>, Int<4> >,
             List<Int<5>, Int<420>, Int<32> >,
             List<Int<1>, Int<10>, Int<120> >
-    > matrix24;
+                                  > matrix24;
 
     // = List<
     //			List< Int<420>, Int<42>, Int<42> >,
@@ -164,12 +164,12 @@ int main() {
     typedef List<
             List<Int<1>, Int<2> >,
             List<Int<0>, Int<1> >
-    > matrix12;
+                         > matrix12;
 
     typedef List<
             List<Int<0>, Int<7> >,
             List<Int<8>, Int<0> >
-    > matrix22;
+                         > matrix22;
 
     typedef typename Multiply<matrix12, matrix22>::result matrix32;
     // = List<
@@ -203,13 +203,13 @@ int main() {
             List<Int<1>, Int<2>, Int<0>>,
             List<Int<0>, Int<1>, Int<0>>,
             List<Int<1>, Int<0>, Int<5>>
-    > multi1;
+                                 > multi1;
 
     typedef List<
             List<Int<1>, Int<2>>,
             List<Int<0>, Int<1>>,
             List<Int<1>, Int<0>>
-    > multi2;
+                         > multi2;
 
 //    List<
 //            List<Int<1>, Int<4>>,

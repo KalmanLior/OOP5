@@ -27,7 +27,7 @@ bool testMatrixSet(){
  List< Int<4>, Int<5>, Int<3> >,
  List< Int<1>, Int<2>, Int<6> >
  > matrix1;
-  typedef MatrixSet<0,0,Int<150>,matrix1>::list mod_matrix1;
+  typedef typename MatrixSet<0,0,Int<150>,matrix1>::matrix mod_matrix1;
   int first_value = MatrixGet<0,0,mod_matrix1>::value::value;
   return (getEqualTestResult(150,first_value));
 }

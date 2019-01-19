@@ -9,7 +9,7 @@ struct Int {
 };
 
 //=========================================== List ===========================================//
-template<typename>
+template<typename... Elements>
 struct List {
 };
 
@@ -58,13 +58,13 @@ struct ListSet {
 
 template<int N, typename T, typename... L>
 struct ListSet<N, T, List<L...>> {
-    typedef typename PrependList<List<L...>::head, ListSet<N - 1, T, List<L...>::next>::list>
+    typedef typename PrependList<typename List<L...>::head, typename ListSet<N - 1, T, typename List<L...>::next>::list>
     ::list list;
 };
 
 template<typename T, typename... L>
 struct ListSet<0, T, List<L...>> {
-    typedef typename PrependList<T, List<L...>::next>::list list;
+    typedef typename PrependList<T, typename List<L...>::next>::list list;
 };
 
 #endif //OOP5_PART1_UTILITIES_H
