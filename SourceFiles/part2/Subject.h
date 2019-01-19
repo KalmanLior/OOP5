@@ -7,39 +7,34 @@ using std::list;
 #ifndef OOP5_PART2_SUBJECT_H
 #define OOP5_PART2_SUBJECT_H
 
+#define FOREACH(object, container)         for(auto (object) = (container).begin(); \
+                                                (object) != (container).end();       \
+                                                (object)++)
+
 template <typename T>
 class Subject{
 private:
-    list<Observer<T>*>* observers;
+    list<Observer<T>*> observers;
 public:
     Subject<T>(){
-        observers =  new list<Observer<T>*>();
-    }
-    ~Subject(){
-        delete(observers);
+        observers =  list<Observer<T>*>();
     }
     void notify(const T& event){
-        for(auto observer = observers->begin(); \
-            observer != observers->end();       \
-            observer++){
-            (*observer)->handleEvent(event);
+        for(auto observer : observers){
+            observer->handleEvent(event);
         }
     }
     void addObserver(Observer<T>& observer){
-        for(auto o = observers->begin(); \
-            o != observers->end();       \
-            o++){
-            if((*o) == &observer) //TODO: comparing by addresses.. is that ok?
+        for(auto o : observers){
+            if(o == &observer)
                 throw ObserverAlreadyKnownToSubject();
         }
-        observers->push_back(&observer);
+        observers.push_back(&observer);
     }
     void removeObserver(Observer<T>& observer){
-        for(auto o = observers->begin(); \
-            o != observers->end();       \
-            o++){
-            if((*o) == &observer) {//TODO: comparing by addresses.. is that ok?
-                observers->erase(o);
+        FOREACH(o, observers){
+            if((*o) == &observer) {
+                observers.erase(o);
                 return;
             }
         }

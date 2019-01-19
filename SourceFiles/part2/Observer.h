@@ -4,7 +4,8 @@
 template <typename T>
 class Observer{
 public:
-    //pure virtual
+    Observer() = default;
+    virtual ~Observer() = default;
     virtual void handleEvent(const T&) = 0;
 };
 
